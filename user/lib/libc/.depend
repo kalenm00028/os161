@@ -277,6 +277,10 @@ $(MYBUILDDIR)/time.o: \
  $(INSTALLTOP)/include/kern/time.h \
  $(INSTALLTOP)/include/kern/unistd.h \
  $(INSTALLTOP)/include/kern/wait.h
+$(MYBUILDDIR)/syscalls.o: \
+ ../../../build/user/lib/libc/syscalls.S \
+ $(INSTALLTOP)/include/kern/syscall.h \
+ $(INSTALLTOP)/include/machine/regdefs.h
 $(MYBUILDDIR)/adddi3.o: \
  ../../../common/gcc-millicode/adddi3.c \
  ../../../common/gcc-millicode/longlong.h \

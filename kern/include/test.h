@@ -30,6 +30,10 @@
 #ifndef _TEST_H_
 #define _TEST_H_
 
+
+void hello(void);
+
+
 /*
  * Declarations for test code and other miscellaneous high-level
  * functions.
@@ -46,6 +50,10 @@ int catmouse(int, char **);
 /*
  * Test code.
  */
+
+/*User test*/
+int usertest(int, char *[]);
+int threadfun(int, char**);
 
 /* lib tests */
 int arraytest(int, char **);
