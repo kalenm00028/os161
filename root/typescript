@@ -1,0 +1,51 @@
+Script started on Wed 21 Oct 2015 09:55:44 AM PDT
+Welcome to the Holodeck.
+
+Death.  Destruction.  Disease.  Horror.  That's what war is all about.
+That's what makes it a thing to be avoided.
+		-- Kirk, "A Taste of Armageddon", stardate 3193.0
+
+[01;36mmcckal05[0;37m@[01;36mholodeck2[00m:[01;35mroot[00m$ cd [K[K[Ksos-gdb kernel
+GNU gdb (GDB) 7.8
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "--host=x86_64-unknown-linux-gnu --target=mips-harvard-os161".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from kernel...done.
+(gdb) dir $[Ko[Kos11[K61/kern.c[K[K/compile/S[KASST0
+Warning: /home/mcckal05/os161/root/os161/kern/compile/ASST0: No such file or directory.
+Source directories searched: /home/mcckal05/os161/root/os161/kern/compile/ASST0:$cdir:$cwd
+(gdb) target remote unix:.sockets.[K/gdb
+Remote debugging using unix:.sockets/gdb
+__start () at ../../arch/sys161/startup/start.S:54
+54	../../arch/sys161/startup/start.S: No such file or directory.
+(gdb) target remote unix:.sockets/gdb[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kdir $OSTREE/kern/compile/ASST0
+Source directories searched: $OSTREE/kern/compile/ASST0:/home/mcckal05/os161/root/os161/kern/compile/ASST0:$cdir:$cwd
+(gdb) dir $OSTREE/kern/compile/ASST0=/kern/compile/ASST0[1P/kern/compile/ASST0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P/kern/compile/ASST0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P/kern/compile/ASST0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P/kern/compile/ASST0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P/kern/compile/ASST0[C[C[C[C[C[C[C[C[C[C[C[C[C[1P/kern/compile/ASST0[C[C[C[C[C[C[C[C[C[C[C[C[1P/kern/compile/ASST0[C[C[C[C[C[C[C[C[C[C[C[1P/kern/compile/ASST0[C[C[C[C[C[C[C[C[C[C$/kern/compile/ASST0[C[C[C[C[C[C[C[C[C[C[Co/kern/compile/ASST0[C[C[C[C[C[C[C[C[C[C[C[Cs/kern/compile/ASST0[C[C[C[C[C[C[C[C[C[C[C[C[C1/kern/compile/ASST0[C[C[C[C[C[C[C[C[C[C[C[C[C[C6/kern/compile/ASST0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C1/kern/compile/ASST0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+Source directories searched: $os161/kern/compile/ASST0:$OSTREE/kern/compile/ASST0:/home/mcckal05/os161/root/os161/kern/compile/ASST0:$cdir:$cwd
+(gdb) dir $os161/kern/compile/ASST0[C[C[C[C[C[C[C[C[C[C[COSTREE/kern/compile/ASST0[C[C[C[C[C[Ctarget remote unix:.sockets/gdb
+A program is being debugged already.  Kill it? (y or n) y
+^[[A^[[B        ^Z
+[1]+  Stopped                 sos-gdb kernel
+[01;36mmcckal05[0;37m@[01;36mholodeck2[00m:[01;35mroot[00m$ sos[K[K[Ksos-gdb[Kb j[Kkernel
+GNU gdb (GDB) 7.8
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "--host=x86_64-unknown-linux-gnu --target=mips-harvard-os161".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/
