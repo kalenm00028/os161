@@ -131,7 +131,9 @@ syscall(struct trapframe *tf)
 	  break;
 #endif // UW
 
-	    /* Add stuff here */
+	case SYS_fork:
+		err = sys_fork(tf, (pid_t *)&retval);
+		break;
  
 	default:
 	  kprintf("Unknown syscall %d\n", callno);

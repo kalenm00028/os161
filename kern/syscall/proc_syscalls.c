@@ -9,6 +9,7 @@
 #include <thread.h>
 #include <addrspace.h>
 #include <copyinout.h>
+#include <mips/trapframe.h>
 
   /* this implementation of sys__exit does not do anything with the exit code */
   /* this needs to be fixed to get exit() and waitpid() working properly */
@@ -92,3 +93,34 @@ sys_waitpid(pid_t pid,
   return(0);
 }
 
+void uproc_thread(void *temp_tr, unsigned long k);
+
+void uproc_thread(void *temp_tr, unsigned long k) {
+	(void)k;
+	(void)temp_tr;
+	kprintf("Child - I made it to the child user uproc_thread!\n");
+	proc_remthread(curthread);
+	thread_exit();
+}
+
+
+int sys_fork(struct trapframe *tf, pid_t *retval) {
+
+	struct trapframe *temp_tf;
+	int err;
+	char name[16];
+	DEBUG(DB_SYSCALL, "Syscall: sys_fork()\n()");
+	temp_tf = kmalloc(sizeof(struct trapframe));
+	*temp_tf = *tf;
+	err = thread_fork(name, NULL, uproc_thread, temp_tf, 0);
+	if(err) {
+		return err;
+	}
+	for(int i=0; i<1000000; i++) {}
+	kprintf("Parent returning after thread fork\n");
+	*retval = 2;
+	kprintf("Parent leaving sys_fork\n");
+	for(int j=0; j<10000; j++) {}
+	return(0);
+
+}

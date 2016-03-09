@@ -454,6 +454,9 @@ cmd_opsmenu(int n, char **a)
 static const char *testmenu[] = {
 	"[tf1] Thread fun Test!              ",
 	"[ut1] New User Test                 ",
+	"[nlt] New Lock Test		     ",
+	"[lct] Lock Counter Test	     ",
+	"[slc] Spin Lock Counter Test	     ",
 	"[at]  Array test                    ",
 	"[bt]  Bitmap test                   ",
 	"[km1] Kernel malloc test            ",
@@ -565,6 +568,9 @@ static struct {
 	/*Kalen's new test*/
 	{ "ut1",	usertest },
 	{ "tf1",	threadfun },
+	{ "lct",	lockCounter },
+	{ "slc",	spinLockCounter },
+	{ "nlt",	newLockCounter },
 
 	/* base system tests */
 	{ "at",		arraytest },

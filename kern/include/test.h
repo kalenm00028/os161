@@ -54,6 +54,9 @@ int catmouse(int, char **);
 /*User test*/
 int usertest(int, char *[]);
 int threadfun(int, char**);
+int lockCounter(int, char**);
+int spinLockCounter(int, char**);
+int newLockCounter(int, char**);
 
 /* lib tests */
 int arraytest(int, char **);

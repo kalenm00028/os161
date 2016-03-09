@@ -69,6 +69,13 @@ struct proc {
 #endif
 
 	/* add more material here as needed */
+	/* My pid */
+	pid_t p_pid;
+
+	/*Parent process. We won't need both of these in the end. */
+	pid_t pp_pid;
+	struct proc *p_pproc;
+
 };
 
 /* This is the process structure for the kernel and for kernel-only threads. */

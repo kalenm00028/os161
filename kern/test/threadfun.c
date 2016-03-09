@@ -4,6 +4,7 @@
 #include <synch.h>
 #include <test.h>
 
+#define NTHREADS 8
 
 int count = 0;
 static struct semaphore *tsem = NULL;
@@ -29,47 +30,14 @@ static void threadfuntest(void *junk, unsigned long num) {
 	(void)junk;
 	(void)num;
 
-	kprintf("%d", count);
 	for (int i = 0; i < 10000; i++) {
-		/*kprintf("%d", count++);*/
 		count++;
 	}
-	kprintf("%d", count);
+
+	kprintf("End count: %d \n", count);
+
 	V(tsem);
 }
-
-
-/*static
-void
-loudthread(void *junk, unsigned long num)
-{
-        int ch = '0' + num;
-        int i;
-
-        (void)junk;
-
-        for (i=0; i<10; i++) {
-                putch(ch);
-        }
-        V(tsem);
-}*/
-
-
-/*static
-void
-quietthread(void *junk, unsigned long num)
-{
-        int ch = '0' + num;
-        volatile int i;
-
-        (void)junk;
-
-        putch(ch);
-        for (i=0; i<200000; i++);
-        putch(ch);
-
-        V(tsem);
-}*/
 
 static
 void
@@ -92,6 +60,8 @@ runthreads(int input)
    for (i=0; i<=input; i++) {
       P(tsem);
    }
+
+   kprintf("End count: %d \n", count);
 }
 
 
@@ -102,9 +72,9 @@ threadfun(int nargs, char **args)
    int input = *args[1] - 48;
 
    init_sem();
-   kprintf("Starting thread test...\n");
+   kprintf("Starting unsafe counter test...\n");
    runthreads(input);
-   kprintf("\nThread test done.\n");
+   kprintf("\nUnsafe counter test done.\n");
 
    return 0;
 }

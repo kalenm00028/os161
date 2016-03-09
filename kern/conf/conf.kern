@@ -433,6 +433,9 @@ optfile   synchprobs  synchprobs/catmouse_synch.c
 ########################################
 
 file		test/threadfun.c
+file		test/newLockTest.c
+file		test/lockCounter.c
+file		test/spinLockCounter.c
 file		test/usertest.c
 file		test/arraytest.c
 file		test/bitmaptest.c
